@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+    </div>
+
+    <!-- mars info -->
+    <div class="row" >
+      <div class="col-md-12">
+        <h2 >Latest Mars News</h2>
+        <h4 class="heading">{{scrape_data.title}}</h4>
+        <p>{{scrape_data.par}}</p>
+      </div>
+    </div>
+
+    <!-- New section divided into two columns -->
+    <div class="row">
+
+      <!-- Left Side -->
+      <!-- Row for Featured Mars Image -->  
+      <div class="col-md-8">
+        <h3><b>Featured Mars Image</b></h3>
+        <img src={{scrape_data.base_nasa_image}} height=auto width=750px>
+      </div>
+
+      <!-- Right Side is divided into two rows -->
+      <!-- Row for Mars Weather Tweet -->
+      <div class="col-md-4">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <h3><b>Current Weather on Mars</b></h3>
+                  {{scrape_data.mars_t_weather}}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Row for Mars Facts HTML data -->
+        <div class="row">
+          <div class="col-md-12">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <h3><b>Mars Facts</b></h3>
+                  <p>{{scrape_data.Facts}}</p>
+              </div>
+            </div>
+          </div>
+        </div>      
+      </div>  
+    </div>
+
+      <!-- New Section is divided into two columns for images -->
+    <div class="row">
+      <h2 class="text-center"><b>Mars Hemispheres</b></h2>
+      <!--first row -->
+      <div class="col-md-6">
+        <img src="{{scrape_data.images}}">
+          
+      </div>   
+    </div>   
+</body>
+</html>
+
